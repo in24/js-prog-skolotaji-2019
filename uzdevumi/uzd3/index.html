@@ -49,6 +49,9 @@
       <button class="col-md-auto btn btn-success" onClick="pievienot()">
         Pievieno
       </button>
+      <button class="col-md-auto btn btn-success" onClick="dzest()">
+          Dzēs šo atslēgu
+        </button>
     </div>
     <script type="text/javascript">
       var objekts = {};
@@ -57,6 +60,12 @@
         let a = document.getElementById("atslega").value;
         let v = document.getElementById("vertiba").value;
         objekts[a] = v;
+        return;
+      }
+
+      function dzest(){
+        let a = document.getElementById("atslega").value;
+        delete objekts[a];
         return;
       }
     </script>
