@@ -50,9 +50,13 @@
         Pievieno
       </button>
       <button class="col-md-auto btn btn-success" onClick="dzest()">
-          Dzēs šo atslēgu
-        </button>
+        Dzēs šo atslēgu
+      </button>
+      <button class="col-md-auto btn btn-success" onClick="drukat()">
+        Printē
+      </button>
     </div>
+    <div id="teksts"></div>
     <script type="text/javascript">
       var objekts = {};
 
@@ -63,10 +67,16 @@
         return;
       }
 
-      function dzest(){
+      function dzest() {
         let a = document.getElementById("atslega").value;
         delete objekts[a];
         return;
+      }
+      function drukat() {
+        const sakne = document.getElementById("teksts");
+        const raksti = document.createElement("h3");
+        raksti.innerHTML = JSON.stringify(objekts);
+        sakne.appendChild(raksti);
       }
     </script>
     <div id="info">
